@@ -1,7 +1,4 @@
 ﻿# FaMI - Video Series Xác Suất Thống Kê (Manim)
-
-Repository tổng hợp mã nguồn render video diễn giải toán học & ứng dụng kinh tế/tài chính thuộc dự án **FaMI 1956**, sử dụng thư viện **Manim Community Edition** và **gTTS** (Google Text-to-Speech).
-
 ---
 
 ## 📂 Danh Sách Các Video Trong Series
@@ -92,15 +89,3 @@ video_X/
 └── asset/                    # Các file icon SVG, ảnh minh họa (nếu có)
 ```
 
----
-
-## 📦 Đẩy Lên GitHub Lần Đầu
-
-```bash
-git init
-git add .
-git commit -m "feat: initial commit for FaMI videoxstk series"
-git branch -M main
-git remote add origin https://github.com/<your-username>/fami-videoxstk.git
-git push -u origin main
-```
