@@ -1,0 +1,119 @@
+﻿Danh mục đầu tư: Tính hiệp phương sai giữa hai cổ phiếu để giảm rủi ro
+
+
+
+
+	Lời thoại
+	Hình ảnh
+	Tình huống dẫn nhập
+	Làm thế nào để có thể xây dựng một danh mục đầu tư vừa có lợi nhuận, vừa giảm thiểu rủi ro?
+	Xuất hiện 1 danh mục
+
+
+	Mô tả bài toán/ vấn đề cần giải quyết
+	Giả sử bạn là một nhà đầu tư tham gia vào thị trường chứng khoán và đang có 100 triệu đồng. Sau khi phân tích thị trường, bạn tìm được hai cổ phiếu tiềm năng là A và B.
+Dựa trên dữ liệu lịch sử về tỷ suất sinh lợi của 2 cổ phiếu trong 5 tháng gần nhất như sau ,  ta tính tỷ suất sinh lợi trung bình của từng cổ phiếu và thấy cổ phiếu A có lợi nhuận trung bình cao hơn cổ phiếu B. 
+Tháng
+	A (%)
+	B (%)
+	
+
+1
+	8
+	5
+	
+
+2
+	10
+	7
+	
+
+3
+	-2
+	-1
+	
+
+4
+	12
+	8
+	
+
+5
+	4
+	2
+	
+
+Thoạt nhìn, nhiều người sẽ nghĩ rằng nên đầu tư toàn bộ vào cổ phiếu A vì lợi nhuận cao hơn. Nhưng trong đầu tư, lợi nhuận không phải yếu tố duy nhất. Chúng ta còn phải quan tâm đến rủi ro.
+Vậy nên phân bổ số tiền này như thế nào để danh mục ít rủi ro nhất?
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+* Nhà đầu tư nhìn biểu đồ chứng khoán
+* Hai mã cổ phiếu A và B hiện trên màn hình
+* Dấu hỏi lớn xuất hiện
+Hiện bảng tỷ suât trong lịch sử
+Hiện công thức tính tỷ suất lợi nhuận trung bình, so sánh A và B.
+Mũi tên từ 100 triệu → A (100%). 
+Xuất hiện chữ "Risk?" cùng biểu tượng cảnh báo. 
+
+
+	Diễn giải/ Minh họa
+	Để trả lời được câu hỏi này, chúng ta sẽ sử dụng Lý thuyết Danh mục Đầu tư Hiện đại do Harry Markowitz đề xuất. 
+Từ dữ liệu trên, ta sẽ tính độ lệch chuẩn để đánh giá mức độ biến động của từng cổ phiếu. Độ lệch chuẩn càng lớn thì rủi ro càng cao. Tuy nhiên, rủi ro của danh mục không chỉ phụ thuộc vào từng cổ phiếu riêng lẻ mà còn phụ thuộc vào cách chúng biến động so với nhau. Để biết hai cổ phiếu ảnh hưởng lẫn nhau như thế nào, ta sử dụng hiệp phương sai.
+Hiệp phương sai đo lường mức độ biến động cùng nhau của hai tài sản.
+Sau khi áp dụng công thức hiệp phương sai cho dữ liệu lịch sử, ta thu được một giá trị là…
+Quay lại câu hỏi ban đầu, ta đặt w_a là tỷ trọng vốn đầu tư vào cổ phiếu A và w_b là tỷ trọng vốn đầu tư vào cổ phiếu B. Ta sẽ tính được phương sai của danh mục đầu tư theo công thức: Var(P)=wA2​σA2​+wB2​σB2​+2wA​wB​Cov(A,B). Giả sử bạn quyết định đầu tư 60% vào A và 40% cho B, khi đó Var(p) sẽ bằng …Phương sai không phải là một giá trị dễ giải thích vì vậy hầu hết các nhà phân tích sử dụng độ lệch chuẩn, Vậy độ lệch chuẩn của danh mục đầu tư này sẽ là …, hay còn là thước đo cho Mức độ rủi ro trong danh mục đầu tư .
+Ta có thể thấy bằng cách kết hợp A và B theo tỷ trọng phù hợp, nhà đầu tư có thể giảm rủi ro mà vẫn duy trì mức lợi nhuận hấp dẫn. Ý tưởng này chính là nền tảng của Lý thuyết Danh mục Đầu tư Hiện đại mà hiện nay hầu hết các quỹ đầu tư chuyên nghiệp vẫn đang sử dụng để tìm kiếm sự kết hợp tối ưu giữa nhiều tài sản. 
+
+
+	* Hiện công thức tính độ lệch chuẩn và kết quả.
+* Hai đồ thị A và B cùng tăng rồi cùng giảm. Hai đường giá chuyển động gần như song song. Từ khóa "Covariance" xuất hiện ở giữa màn hình. 
+* Hiện bảng:
+Cov(A,B)
+	Ý nghĩa
+	> 0
+	Cùng chiều
+	< 0
+	Ngược chiều
+	≈ 0
+	Gần như độc lập
+	* * Hiện dòng công thức tính Covariance và kết quả.
+* Đặt w_a và w_b
+* Hiện công thức tính phương sai danh mục và kết quả.
+* Căn bậc 2 để tính độ lệch chuẩn và dòng chữ 
+Mức độ rủi ro trong danh mục đầu tư .
+* Đường rủi ro giảm xuống, biểu tượng lá chắn xuất hiện. 
+	Tổng kết kiến thức liên quan
+	Qua ví dụ này, chúng ta thấy rằng hiệp phương sai không chỉ là một công cụ thống kê.
+Nó giúp đo lường mối quan hệ giữa các tài sản và đóng vai trò quan trọng trong việc xác định tỷ trọng đầu tư tối ưu.
+Nhờ đó, nhà đầu tư có thể đưa ra quyết định phân bổ vốn hợp lý và giảm thiểu rủi ro cho danh mục."
+	Hiện tóm tắt kiến thức tổng kết.
+Hiện icon tương ứng
+	Tóm tắt từ khóa
+	Trong video này mình đề cập tới 3 khái niệm quan trọng:
+* Hiệp phương sai (Covariance)
+* Phương sai danh mục đầu tư
+* Đa dạng hóa đầu tư và Lý thuyết Markowitz 
+	Hiện danh sách các từ khóa và hình ảnh minh họa.
+	Gợi ý tiếp theo
+	Câu hỏi dành cho bạn:
+Nếu xuất hiện một cổ phiếu C có lợi nhuận tương đương nhưng có tương quan âm với A, liệu danh mục đầu tư có thể trở nên an toàn hơn nữa hay không? 
+	Hiện câu hỏi.
+	
+
+Tài liệu tham khảo kịch bản
+https://www.investopedia.com/terms/p/portfolio-variance.asp
+https://knowledge.sapp.edu.vn/knowledge/chapter-7-qu%E1%BA%A3n-l%C3%BD-danh-m%E1%BB%A5c-%C4%91%E1%BA%A7u-t%C6%B0
+https://vietnambiz.vn/phuong-sai-danh-muc-dau-tu-portfolio-variance-la-gi-phuong-trinh-cua-phuong-sai-dmdt-20191105112858738.htm
+https://fhsc.com.vn/mo-hinh-markowitz

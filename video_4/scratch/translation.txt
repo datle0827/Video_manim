@@ -1,0 +1,7 @@
+vi_text:
+sản xuất và các lĩnh vực
+dựa vào dự báo để ra quyết định.
+
+en_text:
+manufacturing and fields
+Rely on forecasts to make decisions.

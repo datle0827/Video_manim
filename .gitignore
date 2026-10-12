@@ -1,0 +1,44 @@
+﻿# ==========================================
+# Manim build outputs, media and partial files
+# ==========================================
+media/
+*/media/
+**/media/
+partial_movie_files/
+*/partial_movie_files/
+
+# ==========================================
+# Python cache & temporary files
+# ==========================================
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# ==========================================
+# Virtual environments
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# IDE & System Files
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Tool & Extension caches
+# ==========================================
+.sixth/
+*/.sixth/
+**/.sixth/

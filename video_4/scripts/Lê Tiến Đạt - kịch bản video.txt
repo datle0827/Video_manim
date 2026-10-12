@@ -1,0 +1,89 @@
+﻿Outlier (Điểm dị biệt)
+Thời lượng: 4–5 phút
+Phần
+	Lời thoại
+	Hình ảnh xuất hiện
+	1. Câu hỏi mở đầu
+	"Liệu chỉ một điểm dữ liệu bất thường có thể làm thay đổi hoàn toàn kết quả của một mô hình dự báo?"
+	Hai đường hồi quy xuất hiện trên cùng một tập dữ liệu: một đường trước khi thêm điểm bất thường và một đường sau khi thêm. Hiệu ứng đường thẳng bị "bẻ cong" nhẹ.
+	2. Liên kết với video trước
+	"Ở video trước, chúng ta đã sử dụng hồi quy để dự đoán giá nhà. Nhưng hôm nay, chúng ta sẽ đi sâu hơn vào một câu hỏi quan trọng: trước khi tin vào kết quả của mô hình, làm sao biết dữ liệu của chúng ta có đang chứa những điểm nguy hiểm?"
+	Hình ảnh video trước thu nhỏ lại ở góc màn hình. Sau đó zoom vào scatter plot tổng quát với nhiều điểm dữ liệu.
+	3. Đặt vấn đề
+	"Trong thực tế, dữ liệu luôn tồn tại những quan sát khác biệt. Một số chỉ đơn giản là hiếm gặp. Nhưng một số khác lại có thể làm sai lệch toàn bộ mô hình."
+	Các điểm dữ liệu màu xanh xuất hiện. Một vài điểm màu đỏ xuất hiện ở các vị trí khác nhau. Dấu hỏi: "Outlier?"
+	4. Outlier là gì?
+	"Outlier là những điểm dữ liệu nằm xa phần lớn các quan sát còn lại. Tuy nhiên, không phải mọi Outlier đều nguy hiểm đối với mô hình."
+	Một điểm đỏ nằm cao hơn các điểm khác. Một điểm khác nằm xa về phía bên phải. Hai điểm đều được gắn nhãn "?"
+	5. Phương pháp 1: IQR
+	"Đầu tiên, chúng ta có thể sử dụng IQR – khoảng tứ phân vị – để phát hiện những giá trị bất thường trong phân bố dữ liệu."
+	Scatter plot chuyển thành Boxplot. Các mốc Q1, Median và Q3 xuất hiện.
+	
+
+	"IQR được tính bằng hiệu giữa tứ phân vị thứ ba và thứ nhất."
+	Công thức: IQR = Q₃ − Q₁. Phần hộp giữa Q1 và Q3 được tô sáng.
+	
+
+	"Một điểm được xem là Outlier nếu nhỏ hơn Q₁ − 1,5IQR hoặc lớn hơn Q₃ + 1,5IQR."
+	Hai ngưỡng được dựng lên. Một điểm đỏ vượt khỏi ngưỡng trên và sáng lên. Hiệu ứng: "IQR Outlier".
+	
+
+	"IQR giúp chúng ta trả lời câu hỏi: điểm này có bất thường so với phần lớn dữ liệu hay không?"
+	Dòng chữ xuất hiện: "Bất thường về giá trị?"
+	6. Plot twist: IQR chưa đủ
+	"Nhưng một điểm bất thường chưa chắc đã ảnh hưởng mạnh đến mô hình hồi quy."
+	Điểm Outlier theo IQR được đưa vào mô hình, nhưng đường hồi quy chỉ thay đổi rất ít. Người xem bất ngờ.
+	7. Phương pháp 2: Leverage
+	"Để đánh giá mức độ ảnh hưởng của một điểm đến mô hình, chúng ta sử dụng Leverage – hay độ đòn bẩy."
+	Scatter plot xuất hiện trở lại. Một điểm nằm rất xa theo trục X được tô đỏ.
+	
+
+	"Leverage đo lường mức độ khác biệt của một quan sát so với vị trí trung tâm của dữ liệu."
+	Công thức hồi quy đơn: hᵢ = 1/n + (xᵢ − x̄)² / Σ(xⱼ − x̄)². Phần (xᵢ − x̄)² được highlight.
+	
+
+	"Điểm càng xa giá trị trung bình của biến độc lập thì Leverage càng lớn."
+	Điểm đỏ di chuyển ngày càng xa cụm dữ liệu. Thanh Leverage tăng dần từ thấp đến cao.
+	
+
+	"Leverage giúp trả lời câu hỏi: điểm này có đủ sức kéo lệch mô hình hay không?"
+	Dòng chữ xuất hiện: "Ảnh hưởng đến mô hình?"
+	8. Kết hợp IQR và Leverage
+	"Khi kết hợp cả hai phương pháp, chúng ta có thể phân loại các điểm dữ liệu theo mức độ nguy hiểm."
+	Bảng 2×2 xuất hiện.
+	
+
+	"Có những điểm bất thường nhưng ít ảnh hưởng. Có những điểm không quá bất thường nhưng lại có Leverage cao. Và đáng chú ý nhất là những điểm vừa là Outlier theo IQR, vừa có Leverage lớn."
+	Bảng: • IQR thấp – Leverage thấp • IQR cao – Leverage thấp • IQR thấp – Leverage cao • IQR cao – Leverage cao (ô cuối cùng được tô đỏ).
+	9. Tác động đến hồi quy
+	"Khi một điểm vừa bất thường vừa có Leverage cao xuất hiện, đường hồi quy có thể bị kéo lệch đáng kể."
+	Đường hồi quy cũ nét đứt. Điểm đỏ được thêm vào. Đường hồi quy mới xoay mạnh. Hiệu ứng trước – sau rõ ràng.
+	10. Giải quyết vấn đề
+	"Vì vậy, trước khi xây dựng hoặc sử dụng một mô hình dự báo, các nhà phân tích cần kiểm tra dữ liệu bằng nhiều góc nhìn khác nhau."
+	Quy trình xuất hiện: Thu thập dữ liệu → IQR → Leverage → Đánh giá → Hồi quy.
+	
+
+	"Nếu điểm đó là lỗi nhập liệu, có thể loại bỏ hoặc chỉnh sửa. Nếu là trường hợp đặc biệt nhưng có ý nghĩa thực tế, cần cân nhắc các phương pháp hồi quy bền vững hơn."
+	Hai nhánh quyết định: Lỗi dữ liệu → Xử lý. Trường hợp đặc biệt → Robust Regression.
+	11. Liên hệ thực tiễn
+	"Những kỹ thuật này được sử dụng rộng rãi trong tài chính, y tế, sản xuất và bất kỳ lĩnh vực nào dựa vào mô hình dự báo để ra quyết định."
+	Biểu tượng: ngân hàng, bệnh viện, nhà máy, biểu đồ kinh doanh.
+	12. Tổng kết
+	"Outlier không chỉ là những điểm khác biệt. Điều quan trọng là hiểu liệu chúng có đủ sức ảnh hưởng đến mô hình hay không. IQR giúp phát hiện sự bất thường, còn Leverage giúp đánh giá mức độ tác động."
+	Sơ đồ tổng kết: Dữ liệu → IQR (Bất thường?) → Leverage (Ảnh hưởng?) → Mô hình đáng tin cậy.
+	13. Từ khóa
+	"Các khái niệm chính trong video gồm: Outlier, IQR, Leverage và Hồi quy tuyến tính."
+	Các từ khóa xuất hiện quanh scatter plot.
+	14. Câu hỏi gợi mở
+	"Nếu một điểm dữ liệu vừa là Outlier vừa có Leverage cao, liệu chúng ta nên loại bỏ nó hay tìm một mô hình phù hợp hơn?"
+	Dấu hỏi lớn xuất hiện cạnh dòng chữ "Robust Regression?".
+	Công thức xuất hiện trong video
+* Khoảng tứ phân vị:
+IQR = Q₃ − Q₁
+* Ngưỡng phát hiện Outlier:
+Q₁ − 1,5IQR
+Q₃ + 1,5IQR
+* Leverage trong hồi quy tuyến tính đơn:
+hᵢ = 1/n + (xᵢ − x̄)² / Σ(xⱼ − x̄)²
+Thông điệp cuối cùng
+Một điểm dữ liệu bất thường không nhất thiết nguy hiểm. Điều quan trọng là phải đánh giá cả mức độ bất thường và mức độ ảnh hưởng của nó trước khi tin vào kết quả của bất kỳ mô hình dự báo nào.

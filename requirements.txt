@@ -1,0 +1,5 @@
+﻿manim>=0.18.0
+gTTS>=2.5.0
+manim-voiceover>=0.3.0
+numpy>=1.26.0
+Pillow>=10.0.0

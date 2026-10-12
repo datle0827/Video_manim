@@ -1,0 +1,153 @@
+KIỂM SOÁT LỖI SẢN PHẨM
+
+             Lời thoại                                                                                   Hình ảnh
+
+Tình huống
+dẫn nhập     Làm thế nào để một nhà máy có thể kiểm soát chất lượng sản phẩm một cách hiệu                  ●​ Một dây chuyền sản xuất
+             quả, khi số lượng sản phẩm lỗi mỗi ngày luôn thay đổi?                                         ●​ Sản phẩm đạt / lỗi xuất hiện ngẫu nhiên
+                                                                                                            ●​ Biểu tượng dấu hỏi .
+
+
+Mô tả bài                                                                                                Hiện chữ: “Dây chuyền sản xuất”
+toán/ vấn đề “Trong một dây chuyền sản xuất, không phải sản phẩm nào cũng đạt chất lượng hoàn hảo.       Các chấm (•) hoặc hình vuông chạy ngang → tượng
+cần giải                                                                                                 trưng sản phẩm
+quyết        Mỗi ngày, số lượng sản phẩm lỗi có thể thay đổi —                                           Một vài phần tử đổi màu đỏ → tượng trưng lỗi
+                                                                                                         Số lỗi thay đổi (ít → nhiều → ít)
+             có ngày không có lỗi, nhưng cũng có ngày xuất hiện nhiều lỗi hơn.”“Để trả lời câu hỏi đó,
+             chúng ta sử dụng một công cụ trong xác suất,
+
+             đó là biến ngẫu nhiên rời rạc.”
+
+
+Diễn giải/                                                                                                  -​ Hiện dòng công thức lớn giữa màn hình:​
+Minh họa     “Gọi X là số sản phẩm lỗi trong một ngày.                                                          “X = số sản phẩm lỗi trong 1 ngày”
+             X là một biến ngẫu nhiên rời rạc, vì nó nhận các giá trị nguyên đếm được như 0, 1, 2 hoặc
+             3.” “Ở đây, ta giả sử đang xét các lỗi nghiêm trọng trong một dây chuyền đã được kiểm
+                                                                                                                👉
+                                                                                                            -​ Bên dưới hiện thêm:​
+                                                                                                                   “X ∈ {0, 1, 2, 3}”
+                                                                                                            -​ Các số 0,1,2,3 xuất hiện lần lượt
+             soát tốt, nên số lỗi mỗi ngày thường nhỏ và nằm trong khoảng này.”
+
+             Trong thực tế, không phải ngày nào nhà máy cũng có số lượng sản phẩm lỗi giống nhau.
+
+             Dựa trên dữ liệu trong quá khứ, số sản phẩm lỗi mỗi ngày có thể rơi vào các trường hợp
+                                                                                                            -​ Bảng xác suất cho từng trường hợp xuất hiện.
+             sau: xác suất không có lỗi là 0.3,
+                                                                                                            -​ Từng dòng sáng lên lần lượt
+             có 1 lỗi là 0.4,                                                                               -​ Có thể thêm thanh cột nhỏ (bar) phía trên để
+                                                                                                               trực quan hơn
+             2 lỗi là 0.2,                                                                                  -​
+
+             và 3 lỗi là 0.1.”
+Lời thoại                                                                              Hình ảnh
+
+“Bảng này chính là hàm phân phối xác suất của X,
+
+cho biết khả năng xảy ra của từng số lượng lỗi.”
+
+
+                                                                                                       👉
+      “Từ đó, ta có thể tính được giá trị kỳ vọng của X,​                                         -​ Công thức dài hiện ra:​
+       tức là số lỗi trung bình mỗi ngày.”                                                               E(X) = 0×0.3 + 1×0.4 + 2×0.2 +
+                                                                                                     3×0.1
+
+                                                                                                       👉
+      “Cụ thể:​                                                                                   -​ Sau đó biến đổi thành kết quả:​
+       E(X) = 0×0.3 + 1×0.4 + 2×0.2 + 3×0.1 = 1.1”                                                       E(X) = 1.1
+      “Điều này có nghĩa là, trung bình mỗi ngày có khoảng 1.1 sản phẩm lỗi.”                          👉
+                                                                                                  -​ Dòng chữ bên dưới:​
+                                                                                                         “Trung bình ≈ 1.1 lỗi/ngày”
+      “Tuy nhiên, chỉ biết trung bình là chưa đủ.​
+       Trong thực tế, số lỗi có thể dao động giữa các ngày —​
+                                                                                       👉 Highlight số 1.1
+       có hôm không có lỗi, nhưng cũng có hôm lên tới 3 lỗi.”
+
+      “Để đo mức độ biến động này, ta sử dụng phương sai.”
+
+      “Ta tính được:​
+                                                                                       👉
+                                                                                       Hiện:​
+                                                                                           Var(X) = E(X²) − [E(X)]²
+       E(X²) = 0 + 0.4 + 0.8 + 0.9 = 2.1​
+       Var(X) = 2.1 − (1.1)² = 0.89”
+                                                                                       👉
+                                                                                       Sau đó hiện:​
+                                                                                           Var(X) = 0.89
+
+      “Phương sai cho thấy rằng số lỗi không cố định,​
+       mà có sự dao động nhất định quanh giá trị trung bình.”
+
+      “Những kết quả này không chỉ mang ý nghĩa lý thuyết,​
+       mà còn có giá trị thực tiễn rất lớn.”
+
+      “Giả sử mỗi sản phẩm lỗi gây thiệt hại 500 nghìn đồng.​
+       Khi đó, chi phí lỗi trung bình mỗi ngày sẽ là:​
+       1.1 × 500 = 550 nghìn đồng.”                                                           👉
+                                                                                           -​ Hiện công thức:​
+                                                                                                  1.1 × 500 = 550
+
+      “Bây giờ, nhà máy có thể cân nhắc một phương án khác:​
+       đầu tư hệ thống kiểm tra chất lượng với chi phí 300 nghìn mỗi ngày,​
+                                                                                              👉
+                                                                                           -​ Dưới đó:​
+
+                                                                                                              💸
+                                                                                                  “550 nghìn đồng/ngày”
+                                                                                           -​ Có thể thêm icon
+       giúp giảm số lỗi trung bình xuống còn 0.5 lỗi.” “Khi đó, tổng chi phí sẽ là:​
+       0.5 × 500 + 300 = 550 nghìn đồng.”
+                                                                                       Chia màn hình làm 2:
+
+                                                                                           Bên trái:
+             Lời thoại                                                                                  Hình ảnh
+
+                     “Như vậy, về mặt chi phí, hai phương án là tương đương.​
+                      Do đó, nhà máy cần cân nhắc thêm các yếu tố khác như uy tín thương hiệu​             ●​ “Không đầu tư”
+                      hoặc sự hài lòng của khách hàng để đưa ra quyết định.”                               ●​ “Chi phí = 550”
+
+                                                                                                           Bên phải:
+
+                                                                                                           ●​ “Có đầu tư”
+                                                                                                           ●​ “0.5 × 500 + 300 = 550”
+                                                                                                           -​
+
+Tổng kết                                                                                                Hiện tóm tắt kiến thức tổng kết.
+kiến thức            “Qua ví dụ này, ta thấy rằng biến ngẫu nhiên rời rạc là một công cụ rất hữu ích​   Hiện icon tương ứng
+liên quan             trong việc mô hình hóa các hiện tượng không chắc chắn trong thực tế.”
+
+                     “Cụ thể, nó giúp chúng ta:​
+                      mô tả các giá trị có thể xảy ra,​
+                      gán xác suất cho từng trường hợp,​
+                      tính toán giá trị trung bình thông qua kỳ vọng,​
+                      và đánh giá mức độ biến động thông qua phương sai.”
+
+                     “Quan trọng hơn, những kết quả này không chỉ dừng lại ở lý thuyết,​
+                      mà còn có thể được sử dụng để hỗ trợ ra quyết định trong thực tế,​
+                      chẳng hạn như bài toán kiểm soát chất lượng trong sản xuất.”
+
+
+Tóm tắt từ                                                                                              Hiện danh sách các từ khóa và hình ảnh minh họa.
+khóa         Trong video này mình đề cập tới 3 khái niệm quan trọng:
+
+                -​    “Biến ngẫu nhiên rời rạc,
+                -​    hàm phân phối xác suất,
+                -​    kỳ vọng,
+                -​    và phương sai.”
+
+
+Gợi ý tiếp                                                                                              Hiện câu hỏi.
+theo         Câu hỏi dành cho bạn:
+
+             “Vậy trong trường hợp chi phí lỗi ngày càng lớn,
+               Lời thoại                                                                                    Hình ảnh
+
+               doanh nghiệp nên tiếp tục chấp nhận rủi ro,
+
+               hay đầu tư để giảm thiểu sai sót?
+
+
+Tài liệu tham khảo kịch bản
+https://viettelidc.com.vn/tin-tuc/decision-trees-la-gi-thuat-toan-cay-quyet-dinh-va-ung-dung-thuc-te-4838
+https://fr.scribd.com/document/583766930/Decision-Tree
+
